@@ -5,8 +5,6 @@
 # Business Problem
 
 As the demand for creation of original video content continues to grow, many leading companies are investing heavily in creating their own entertainment . In response to this trend, our company has decided to enter the entertainment space by launching a new movie studio. However, with no prior experience in the film industry, the organization faces a critical challenge, it lacks insight into what types of films are currently successful at the box office.
-
- # Overview
 This project explores current box office trends to provide strategic insights for launching a successful movie studio. By analyzing data from major film industry sources, we identify what types of movies are currently performing best financially and critically.
 
 # stake holders
@@ -20,6 +18,7 @@ This project explores current box office trends to provide strategic insights fo
 
 1. Which genres consistently perform best at the box office in terms of revenue and profitability?
 2. What budget ranges are associated with higher profitability?
+3. which movie genre is mostly preferred by audience ?
 
 # Data Understanding 
 # Data Source 
@@ -39,7 +38,37 @@ The data cleaning involved  :
 * checking for duplicate rows and columns . 
 * 
 
-# Objective
+# Key Variables used in analysis
+ The key variables used included :
+ * Title - the name of the film
+ * Release_date	- Original theatrical release date
+ * Genre -primary content type , narrative style of each film. 
+ * Average rating - 	IMDb average user rating
+ * domestic_gross	Domestic box office gross 
+ * foreign_gross	Foreign box office gross 
+ * Total gross - 
+
+
+# Relevance of the Analysis
+This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. 
+
+# Analysis Overview 
+
+
+
+# Conclusion
+
+Acording to our analysis of current and historical box office trends, we identified several factors that correlate with a film’s financial success. These insights provide a strategic foundation for launching a successful movie studio.
+
+ # Summary of Findings
+ 
+1. Sci-Fi, Adventure, and Animation are the best genres for profitability and audience appeal.
+2. Partnering with top-performing studios can enhance production quality and distribution.
+3. Balancing revenue and ratings requires a mixed strategy—focusing on blockbusters for income and critically acclaimed projects for reputation.
+
+These insights inform the recommendation that the studio prioritize action and adventure franchises, carefully budget mid-tier original films, and strategically time releases around holiday seasons.
+
+
 
 
 
