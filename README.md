@@ -28,6 +28,37 @@ The data set was sourced from two main sources
 * [IMDb Datasets](https://www.imdb.com/interfaces/) it contains meta data and user rating information for a movie .
 
 The data sources were sufficient for our analysis because it combined financial performance metrics with audiences and films meta data .This allows us to identify trends in what types of films are both commercially successful and well-received by viewers—critical insights for a company looking to make informed decisions about the kinds of films their new studio should produce.
+
+# Feature Understanding and Documentation
+To support the analysis of film performance and guide our studio’s content strategy, we use features from two datasets
+  # bom.movie_gross.csv.gz`
+This dataset provides financial performance data for films.
+- **Identification :**
+    - *title*: The name of the film (string)
+- **Production :**
+    - *studio*: The production or distribution studio responsible for the film (string).
+- **Finanicial Metrics :**
+    - *domestic_gross*: Total box office revenue earned in the domestic (U.S.) market
+    - *foreign_gross*: Total box office revenue earned in international markets *(integer or float)*.
+
+#### 2. IMDb Merged Table: `movie_basic` + `movie_ratings`
+This dataset provides financial performance data for films.
+- **Identification :**
+    - *movie_id*: A unique identifier for each film(string)
+- **Titles :**
+    - *primary_title* : The title most commonly used(string).
+    - *original_title* : The title most commonly used(string).
+- **Time :**
+    - *start_year*: The year the film was first released
+- **Content Characteristics :**
+    - *runtime_minutes* : The duration of the film in minutes
+    - *genres* : The genre or genres associated with the film.
+- **Audience Feedback :**
+    - *averagerating* : The average IMDb user rating for the film
+    - *numvotes* : The total number of IMDb users who rated the film
+
+Together, these features provide a comprehensive view of each film's
+commercial success, genre and runtime characteristics, viewer sentiment, and release context.
   
 # Data Preparation 
 
@@ -36,7 +67,9 @@ The data cleaning involved  :
 
 * checking for any missing values .
 * checking for duplicate rows and columns . 
-* 
+*  Converted data types for consistency
+*  Merged Box Office Mojo and IMDb datasets using common keys (e.g., titles and years)
+*  Calculated total gross revenue (domestic + foreign )
 
 # Key Variables used in analysis
  The key variables used included :
@@ -50,10 +83,20 @@ The data cleaning involved  :
 
 
 # Relevance of the Analysis
-This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. 
+
+This analysis aims to help the new studio make **informed decisions** about the types of films to produce, genres to focus on, and production budgets to consider—ultimately maximizing financial success and brand reputation. 
 
 # Analysis Overview 
 
+## Analysis Introduction
+
+This project focuses on three core questions:
+
+1. **Genre Profitability** — Which genres consistently generate strong box office returns?  
+2. **Budget vs. Revenue** — What investment levels are linked to higher profits?  
+3. **Audience Preference** — What genres receive the best audience ratings?
+
+This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. We'll examine three key relationships:
 
 
 # Conclusion
@@ -67,6 +110,16 @@ Acording to our analysis of current and historical box office trends, we identif
 3. Balancing revenue and ratings requires a mixed strategy—focusing on blockbusters for income and critically acclaimed projects for reputation.
 
 These insights inform the recommendation that the studio prioritize action and adventure franchises, carefully budget mid-tier original films, and strategically time releases around holiday seasons.
+
+# Strategic Recommendations
+
+- Prioritize **action, adventure, and animation** projects for blockbuster returns  
+- Allocate mid-range budgets to **critically acclaimed genres** such as drama or documentary  
+- **Time releases strategically**—especially around holiday periods  
+- Establish **strategic partnerships** with successful studios for enhanced production and distribution
+
+These insights will serve as the foundation for building a **successful and data-informed movie studio**.
+
 
 
 
