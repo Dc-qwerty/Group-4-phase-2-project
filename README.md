@@ -4,7 +4,7 @@
 
 # Business Problem
 
-As the demand for creation of original video content continues to grow, many leading companies are investing heavily in creating their own entertainment . In response to this trend, our company has decided to enter the entertainment space by launching a new movie studio. However, with no prior experience in the film industry, the organization faces a critical challenge, it lacks insight into what types of films are currently successful at the box office.
+As the demand for creation of original video content continues to grow, many leading companies are investing heavily in creating their own entertainment ventures . In response to this trend, our company plans to  launch a new movie studio but lacks industry insights . 
 This project explores current box office trends to provide strategic insights for launching a successful movie studio. By analyzing data from major film industry sources, we identify what types of movies are currently performing best financially and critically.
 
 # stake holders
@@ -84,7 +84,7 @@ The data cleaning involved  :
 
 # Relevance of the Analysis
 
-This analysis aims to help the new studio make **informed decisions** about the types of films to produce, genres to focus on, and production budgets to consider—ultimately maximizing financial success and brand reputation. 
+The findings help inform what kinds of films to produce, how to allocate budgets, and when to release them maximizing both financial return and brand value.
 
 # Analysis Overview 
 
@@ -98,10 +98,6 @@ This project focuses on three core questions:
 
 This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. We'll examine three key relationships:
 
-
-# Conclusion
-
-Acording to our analysis of current and historical box office trends, we identified several factors that correlate with a film’s financial success. These insights provide a strategic foundation for launching a successful movie studio.
 
  # Summary of Findings
  
@@ -119,6 +115,10 @@ These insights inform the recommendation that the studio prioritize action and a
 - Establish **strategic partnerships** with successful studios for enhanced production and distribution
 
 These insights will serve as the foundation for building a **successful and data-informed movie studio**.
+
+# Conclusion
+
+By analyzing financial trends and viewer sentiment, we’ve developed a strategic blueprint for launching a data-informed and competitive movie studio. This foundation equips leadership with the evidence needed to make profitable, creative, and impactful decisions.
 
 
 
