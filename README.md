@@ -2,23 +2,10 @@
 
 ![Movie Studio image](https://github.com/user-attachments/assets/ccbbc3e6-7a17-4e9d-9db5-263164a909f2)
 
-# Business Problem
+# Project Overview
 
 As the demand for creation of original video content continues to grow, many leading companies are investing heavily in creating their own entertainment ventures . In response to this trend, our company plans to  launch a new movie studio but lacks industry insights . 
 This project explores current box office trends to provide strategic insights for launching a successful movie studio. By analyzing data from major film industry sources, we identify what types of movies are currently performing best financially and critically.
-
-# stake holders
-
-* The executive leadership team
-* Head of the New studio
-* Investors and the board members
-* production planning team
-  
-# Key Business Questions 
-
-1. Which genres consistently perform best at the box office in terms of revenue and profitability?
-2. What budget ranges are associated with higher profitability?
-3. which movie genre is mostly preferred by audience ?
 
 # Data Understanding 
 # Data Source 
@@ -68,8 +55,71 @@ The data cleaning involved  :
 * checking for any missing values .
 * checking for duplicate rows and columns . 
 *  Converted data types for consistency
-*  Merged Box Office Mojo and IMDb datasets using common keys (e.g., titles and years)
+*  Merge Box Office Mojo and IMDb datasets using common keys (e.g., titles and years)
 *  Calculated total gross revenue (domestic + foreign )
+
+# Analysis Overview 
+
+## Analysis Introduction
+
+This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. We'll examine three key relationships :
+1.  Genre Profitability Analysis
+2.  Studio Performance Analysis
+3. Audience Preferences (Ratings vs. Revenue)
+
+ ## Expected Insights
+ By the end of this analysis, we'll provide actionable recommendations on:  
+ 1. Which genres to prioritize for production  
+ 2. Which studios are most succesful
+ 3. Do high ratings lead to higher revenue
+
+We choose these specific variables because they:  
+ - Are consistently available across datasets  
+ - Represent controllable business decisions (genre, release timing)  
+ - Directly measure success (revenue, ratings)  
+ - These variables naturally led to the 3 chosen approaches
+
+# 1.  Genre Profitability Analysis
+ our main goal was to :
+- Understand which movie genres are most profitable (highest average revenue)
+- Understand which genres are most appreciated by audiences (highest average rating)
+# Method used for analysis :
+- Some movies have multiple genres we explode them so each genre appears in a separate row
+- Group data by genre and calculate:
+    - Average gross revenue
+    - Median gross revenue
+    - Movie count per genre
+    - Average IMDb rating
+      
+# 2.  Studio Performance Analysis
+### Goal:
+This helps identify which studios consistently produce highly-rated films. Understanding studio performance is crucial for strategic partnerships, distribution planning, and benchmarking success.
+
+# 3. Audience Preferences (Ratings vs. Revenue)
+### Goal:
+- Understand relationship between IMDb ratings and total revenue
+- Identify which rating ranges are most commercially successful
+  ### Method:
+- Create rating tiers:
+    - <5
+    - 5-6
+    - 6-7
+    - 7-8
+    - 8+
+- Group data by rating tier and calculate:
+    - Average revenue
+    - Median revenue
+    - Movie count per tier
+    - Average rating
+- Plot scatter of individual movie ratings vs. total gross
+- Compute correlation between rating and revenue
+
+  **Key Findings:**
+1. Weak positive correlation (r=0.20) between ratings and revenue — higher ratings are slightly associated with higher revenue.
+2. range 6-7 performs best commercially mass-appeal films that attract large audiences.
+3. Blockbuster franchises perform well even with mid-range ratings.
+4. Highest rated movies (>8) have more modest commercial performance.
+
 
 # Key Variables used in analysis
  The key variables used included :
@@ -85,18 +135,6 @@ The data cleaning involved  :
 # Relevance of the Analysis
 
 The findings help inform what kinds of films to produce, how to allocate budgets, and when to release them maximizing both financial return and brand value.
-
-# Analysis Overview 
-
-## Analysis Introduction
-
-This project focuses on three core questions:
-
-1. **Genre Profitability** — Which genres consistently generate strong box office returns?  
-2. **Budget vs. Revenue** — What investment levels are linked to higher profits?  
-3. **Audience Preference** — What genres receive the best audience ratings?
-
-This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. We'll examine three key relationships:
 
 
  # Summary of Findings
