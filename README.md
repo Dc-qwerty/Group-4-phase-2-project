@@ -15,8 +15,7 @@
 
 # Project Overview
 
-As the demand for creation of original video content continues to grow, many leading companies are investing heavily in creating their own entertainment ventures . In response to this trend, our company plans to  launch a new movie studio but lacks industry insights . 
-This project explores current box office trends to provide strategic insights for launching a successful movie studio. By analyzing data from major film industry sources, we identify what types of movies are currently performing best financially and critically.
+With the growing  demand for creation of original video content , many leading companies are increasinngly investing heavily in creating their own entertainment ventures . In response to this trend, our company aims to  launch a new movie studio but lacks industry insights . This project explores current box office trends to provide strategic insights for launching a successful movie studio. By analyzing data from major film industry sources, we identify what types of movies are currently performing best financially and critically.
 
 # Stake holders
 * Executive Leadership Team
@@ -25,53 +24,41 @@ This project explores current box office trends to provide strategic insights fo
 * Investors and Board Members
 
   ## Business Objectives
-The new movie studio lacks experience in movie making and needs insights to:
-- Identify successful movie characteristics.
-- Pinpoint profitable genres.
-- Determine optimal budget ranges.
-- Strategize release timings to maximize box office revenue.
+  To successfully launch our new movie studio, we need to base decisions on proven industry trends. Our objectives are to:
+* Understand the characteristics of successful films, including genre, length, and audience reception.
+* Identify the most profitable film genres to prioritize in production.
+* Determine budget ranges
+
+  By meeting these objectives, we aim to minimize financial risk and position the studio for long-term success in a competitive industry.
 
 # Data Understanding 
+To guide our strategic recommendations, we analyzed data from two trusted sources in the film industry—Box Office Mojo and IMDb. These datasets provide both financial performance and audience sentiment, giving us a well-rounded view of what makes a movie successful.
 
 # Data Source 
-The data set was sourced from two main sources 
+The data set was sourced from :  
 
-1.  [Box Office Mojo](https://www.boxofficemojo.com/) it Offers box office performance data for a wide range of films and  included domestic and international grosses.
-2.  [IMDb Datasets](https://www.imdb.com/interfaces/) it contains meta data and user rating information for a movie .
+# 1 . Box Office Mojo (bom.movie_gross.csv)  
+This is a compressed CSV file containing box office performance data for a wide range of films. It includes both domestic and international gross earnings by year and studio.
+# 2. IMDb SQLite Database (im.db.zip) 
+This is a zipped SQLite database that contains metadata and user rating information for movies. The relevant tables, movie_basics and movie_ratings, were merged to support deeper insights.
+# 3. The Numbers Table (tn.movie_budget.csv)
+This dataset provides detailed financial performance metrics for films, especially focusing on production costs and box office returns.
 
 The data sources were sufficient for our analysis because it combined financial performance metrics with audiences and films meta data .This allows us to identify trends in what types of films are both commercially successful and well-received by viewers—critical insights for a company looking to make informed decisions about the kinds of films their new studio should produce.
 
 # Feature Understanding and Documentation
 To support the analysis of film performance and guide our studio’s content strategy, we use features from two datasets
-  # bom.movie_gross.csv.gz`
-This dataset provides financial performance data for films.
-- **Identification :**
-    - *title*: The name of the film (string)
-- **Production :**
-    - *studio*: The production or distribution studio responsible for the film (string).
-- **Finanicial Metrics :**
-    - *domestic_gross*: Total box office revenue earned in the domestic (U.S.) market
-    - *foreign_gross*: Total box office revenue earned in international markets *(integer or float)*.
 
-#### 2. IMDb Merged Table: `movie_basic` + `movie_ratings`
+## Box Office Mojo (bom.movie_gross.csv.gz)
 This dataset provides financial performance data for films.
-- **Identification :**
-    - *movie_id*: A unique identifier for each film(string)
-- **Titles :**
-    - *primary_title* : The title most commonly used(string).
-    - *original_title* : The title most commonly used(string).
-- **Time :**
-    - *start_year*: The year the film was first released
-- **Content Characteristics :**
-    - *runtime_minutes* : The duration of the film in minutes
-    - *genres* : The genre or genres associated with the film.
-- **Audience Feedback :**
-    - *averagerating* : The average IMDb user rating for the film
-    - *numvotes* : The total number of IMDb users who rated the film
 
-Together, these features provide a comprehensive view of each film's
-commercial success, genre and runtime characteristics, viewer sentiment, and release context.
-  
+## IMDb Datasets (movie_basic + movie_ratings)
+
+Metadata and user-generated feedback, this dataset provides financial performance data for films.
+
+## The Numbers Table: tn.movie_budgets.csv
+This dataset provides detailed financial performance metrics for films, especially focusing on production costs and box office returns.
+
 # Data Preparation 
 
 To ensure that the data set was reliable for analysis  , we did data cleaning and preprocessing of our data.
@@ -83,105 +70,166 @@ The data cleaning involved  :
 *  Merge Box Office Mojo and IMDb datasets using common keys (e.g., titles and years)
 *  Calculated total gross revenue (domestic + foreign )
 
-# Analysis Overview 
+  #  Film Industry Analysis for New Movie Studio
+  
+# Analysis Introduction
 
-## Analysis Introduction
+This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. We'll examine four key relationships:
+# 1. Genre Popularity & Trends
+# * Key Variables:
+genres
+averagerating
+total_gross
+
+Why These Matter:
+Determine which genres are most profitable (highest revenue) and most appreciated by audiences (highest ratings).
+
+# 2. Studio Performance Analysis
+Key Variables:
+average_rating
+total_gross
+
+Why These Matter:
+Studio perfomance helps a new movie studio identify, succesful production and distribution partners and potential competitive positioning
+
+# 3. Audience Preferences Analysis
+Key Variables:
+averagerating
+ 
+ Why These Matter:
+Understand the relationship between ratings and revenue to balance artistic quality and commercial success.
+
+# 4. ROI Analysis
+Key Variables:
+production budget
+worldwide gross Why These Matter:
+ROI (Return on Investment) matters because it shows how efficiently money is being used to generate profit.
+
+# Expected Insights
+By the end of this analysis, we'll provide actionable recommendations on:
+
+Which genres to prioritize for production
+Which studios are most succesful
+Do high ratings lead to higher revenue
+Return efficiency relative to cost
+ 
+** These specific variables were chosen because they:
+* Are consistently available across datasets
+* Represent controllable business decisions (genre, release timing)
+* Directly measure success (revenue, ratings)
+* These variables naturally led to the 3 chosen approaches
+
+
+# Analysis 
 
 This analysis aims to identify what types of films are currently performing best at the box office and which studios are the best to guide our new movie studio's content strategy. We'll examine three key relationships :
 1.  Genre Profitability Analysis
 2.  Studio Performance Analysis
 3. Audience Preferences (Ratings vs. Revenue)
+4. ROI Analysis 
 
- ## Expected Insights
- By the end of this analysis, we'll provide actionable recommendations on:  
- 1. Which genres to prioritize for production  
- 2. Which studios are most succesful
- 3. Do high ratings lead to higher revenue
-
-We choose these specific variables because they:  
- - Are consistently available across datasets  
- - Represent controllable business decisions (genre, release timing)  
- - Directly measure success (revenue, ratings)  
- - These variables naturally led to the 3 chosen approaches
 
 # 1.  Genre Profitability Analysis
  our main goal was to :
 - Understand which movie genres are most profitable (highest average revenue)
 - Understand which genres are most appreciated by audiences (highest average rating)
-# Method used for analysis :
-- Some movies have multiple genres we explode them so each genre appears in a separate row
-- Group data by genre and calculate:
-    - Average gross revenue
-    - Median gross revenue
-    - Movie count per genre
-    - Average IMDb rating
-      
+# Key Findings:
+- Sci-Fi, Adventure & Animation genres generate the highest average revenue.
+- Sci-Fi genres achieve both high revenues and high IMDb ratings a good commercial and critical performance.
+- Animation also shows strong ratings and very high revenue a good genre for both family and general audience markets.
+   
 # 2.  Studio Performance Analysis
 ### Goal:
 This helps identify which studios consistently produce highly-rated films. Understanding studio performance is crucial for strategic partnerships, distribution planning, and benchmarking success.
+# Key Findings:
+The two studios P/DW and BV have the best average revenue which makes them the best candidates to partner with
 
 # 3. Audience Preferences (Ratings vs. Revenue)
 ### Goal:
 - Understand relationship between IMDb ratings and total revenue
 - Identify which rating ranges are most commercially successful
-  ### Method:
-- Create rating tiers:
-    - <5
-    - 5-6
-    - 6-7
-    - 7-8
-    - 8+
-- Group data by rating tier and calculate:
-    - Average revenue
-    - Median revenue
-    - Movie count per tier
-    - Average rating
-- Plot scatter of individual movie ratings vs. total gross
-- Compute correlation between rating and revenue
+ # Key Findings:
+- Weak positive correlation (r=0.20) between ratings and revenue — higher ratings are slightly associated with higher revenue.
+- range 6-7 performs best commercially mass-appeal films that attract large audiences.
+- Blockbuster franchises perform well even with mid-range ratings.
+- Highest rated movies (>8) have more modest commercial performance.
 
-  **Key Findings:**
-1. Weak positive correlation (r=0.20) between ratings and revenue — higher ratings are slightly associated with higher revenue.
-2. range 6-7 performs best commercially mass-appeal films that attract large audiences.
-3. Blockbuster franchises perform well even with mid-range ratings.
-4. Highest rated movies (>8) have more modest commercial performance.
+ # 4. ROI Analysis
+### Goal:
+Understand which genres and studios provide the best return on investment
+Help the studio make financially sound production decisions 
 
 
-# Key Variables used in analysis
- The key variables used included :
- * Title - the name of the film
- * Release_date	- Original theatrical release date
- * Genre -primary content type , narrative style of each film. 
- * Average rating - 	IMDb average user rating
- * domestic_gross	Domestic box office gross 
- * foreign_gross	Foreign box office gross 
- * Total gross - 
+# Key Findings
 
+we created a tableau dashboard to represent our analysis 
+![Dashboard 1 (1)](https://github.com/user-attachments/assets/c1657a33-6cc2-45ac-9f18-7f00257ad1d0)
 
-# Relevance of the Analysis
+# summary of our Findings 
 
-The findings help inform what kinds of films to produce, how to allocate budgets, and when to release them maximizing both financial return and brand value.
-
-
- # Summary of Findings
+ After analyzing the combined financial and audience data, we uncovered several important insights to guide the studio's strategy: 
  
-1. Sci-Fi, Adventure, and Animation are the best genres for profitability and audience appeal.
-2. Partnering with top-performing studios can enhance production quality and distribution.
-3. Balancing revenue and ratings requires a mixed strategy—focusing on blockbusters for income and critically acclaimed projects for reputation.
+# 1. Genre Performance
 
-These insights inform the recommendation that the studio prioritize action and adventure franchises, carefully budget mid-tier original films, and strategically time releases around holiday seasons.
+Sci-Fi, Adventure, and Animation genres consistently generated the highest average gross revenue.
+These genres also performed well in terms of audience ratings, indicating both commercial and critical success.
+Drama and Documentary genres received high ratings but showed lower box office performance—ideal for prestige projects, not profit centers.
+
+# 2. Studio Benchmarking
+Certain studios have a strong track record of releasing high-grossing and well-rated films.
+These studios could be ideal partners for co-productions, distribution deals, or mentorship in early stages.
+Repeated success across multiple years signals strong production and marketing capabilities.
+
+# 3. Audience Preferences vs. Revenue
+There is a weak positive correlation (r ≈ 0.20) between IMDb ratings and box office revenue.
+Films rated 6–7 performed best commercially—suggesting mass appeal outweighs critical acclaim in revenue terms.
+Highly rated films (8+) often have strong critical reception but more modest revenue, possibly due to niche appeal.
+Some blockbuster franchises performed well despite mid-range ratings, driven by brand loyalty and strong marketing.
+
+These findings highlight the need for a balanced portfolio strategy—combining high-revenue genre films with critically respected projects to grow both profit and reputation.
 
 # Strategic Recommendations
+Based on our analysis of box office trends and audience preferences, we propose the following strategic actions to guide the launch and growth of the new movie studio:
 
-- Prioritize **action, adventure, and animation** projects for blockbuster returns  
-- Allocate mid-range budgets to **critically acclaimed genres** such as drama or documentary  
-- **Time releases strategically**—especially around holiday periods  
-- Establish **strategic partnerships** with successful studios for enhanced production and distribution
+ 1. Focus on High-Performing Genres
+Prioritize Action, Adventure, Sci-Fi, and Animation films, which consistently deliver strong box office returns.
 
-These insights will serve as the foundation for building a **successful and data-informed movie studio**.
+Develop franchise-ready content in these genres to build long-term audience engagement and brand equity.
+
+2. Adopt a Balanced Production Strategy
+Allocate larger budgets to blockbuster genres with proven commercial success.
+
+Invest in mid-range budget films in genres like Drama and Documentary to build critical acclaim and diversify the studio's portfolio.
+
+3. Optimize Release Timing
+Schedule major releases around holiday seasons (e.g., summer, December), when audience turnout and revenue potential are highest.
+
+Avoid crowded release periods dominated by major competitors unless backed by strong marketing.
+
+ 4. Pursue Strategic Partnerships
+Collaborate with top-performing studios for co-productions, knowledge transfer, and wider distribution networks.
+Leverage industry partnerships to reduce risk and increase exposure for debut releases.
+
+ 5. Build a Data-Driven Culture
+Continue monitoring audience trends, ratings, and financial metrics post-release to refine future strategies.
+Incorporate feedback loops and predictive analytics into decision-making processes.
+
+By following these recommendations, the new studio can position itself for both short-term box office success and long-term brand growth—creating content that resonates with audiences and generates sustainable profits.
 
 # Conclusion
 
-By analyzing financial trends and viewer sentiment, we’ve developed a strategic blueprint for launching a data-informed and competitive movie studio. This foundation equips leadership with the evidence needed to make profitable, creative, and impactful decisions.
+Our analysis offers a data-driven roadmap for launching a successful and competitive movie studio. By combining financial performance metrics from Box Office Mojo with audience insights from IMDb, we identified what makes certain films commercially successful and critically appreciated.
+The analysis reveals:
+1. Action, Adventure, Sci-Fi, and Animation genres offer the highest potential for profitability.
+Films with average IMDb ratings between 6 and 7 tend to perform best at the box office, indicating a preference for broad audience appeal.
+2. Strategic partnerships with established studios can improve production quality and boost distribution reach.
+3. Mid-range budget planning and seasonal release timing are key to maximizing return on investment.
+
+While the analysis yielded valuable insights, several limitations were encountered some of them are : we had Incomplete Data, Some films were missing key fields  which reduced the sample size after cleaning. we also encountered Data Merging Issues , Matching films across datasets required aligning titles and release years, which introduced potential for mismatches or dropped records. Genre Ambiguity , many films were tagged with multiple genres, making it difficult to assign clear labels. We addressed this by "exploding" genres, but this may dilute genre-specific insights. International Market Complexity, Foreign gross data lacked regional breakdowns, limiting our ability to analyze performance in specific countries or continents.Rating Bias,IMDb ratings reflect viewer sentiment but may skew toward more active or niche audiences, potentially biasing our interpretation of popularity.
+
+Despite these challenges, our findings provide a solid strategic foundation for decision-making. Future work could include integrating streaming platform performance, social media sentiment, or production cost data for a more holistic view.
+
+
 
 
 
